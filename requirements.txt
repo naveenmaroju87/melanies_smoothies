@@ -6,5 +6,4 @@
 #requirements.txt
 snowflake-snowpark-python
 streamlit
-requests
 
