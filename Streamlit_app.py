@@ -4,6 +4,8 @@ from snowflake.snowpark.session import Session
 from snowflake.snowpark.functions import col
 import toml
 import time
+import pandas as pd
+
 
 import requests  
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
@@ -32,8 +34,14 @@ st.write('The name on your Smoothie will be:', name_on_order)
 
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
 #fruit_list = my_dataframe.to_pandas()['FRUIT_NAME'].tolist()
-st.dataframe(data=my_dataframe, use_container_width=True)
+
+#convert to snowflake dataframe to a pandas dataframe 
+pd_df = my.dataframe.to_pandas()
+st.dataframe(pd_df)
 st.stop()
+
+#st.dataframe(data=my_dataframe, use_container_width=True)
+#st.stop()
 
 ingredients_list = st.multiselect(
     "Choose up to 5 ingredients:"
