@@ -3,11 +3,13 @@ import streamlit as st
 from snowflake.snowpark.session import Session
 from snowflake.snowpark.functions import col
 import toml
+import time
 
 import requests  
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
 #st.text(smoothiefroot_response.json())
-sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+#sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
 # Load Snowflake config
 config = toml.load("config.toml")
@@ -45,7 +47,8 @@ if ingredients_list:
         st.subheader(fruit_chosen + ' Nutrition Information')
         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
         #st.text(smoothiefroot_response.json())
-        sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+        #sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+        st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
     #st.write(ingredients_string)
 
