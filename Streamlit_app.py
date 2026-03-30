@@ -3,18 +3,7 @@ import streamlit as st
 from snowflake.snowpark.session import Session
 from snowflake.snowpark.functions import col
 import toml
-import requests  
 
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-
-# Show the raw text response
-st.text(smoothiefroot_response.text)
-
-# Or, if the API returns JSON:
-data = smoothiefroot_response.json()
-st.write(data)
-#smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
-#st.text(smoothiefroot_response.json())
 
 # Load Snowflake config
 config = toml.load("config.toml")
