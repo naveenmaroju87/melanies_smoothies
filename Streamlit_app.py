@@ -5,15 +5,8 @@ from snowflake.snowpark.functions import col
 import toml
 import requests  
 
-url = "https://my.smoothiefroot.com/api/fruit/watermelon"
-
-response = requests.get(url)
-
-st.write("Status Code:", response.status_code)
-st.write("Response:", response.text)
-
-
-
+smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
+st.text(smoothiefroot_response.json())
 
 # Load Snowflake config
 config = toml.load("config.toml")
