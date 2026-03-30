@@ -5,7 +5,7 @@
 
 [connections.snowflake]
 account = "NAUDNDE-BLB15716"
-user = "NAVEEN MAROJU"
+user = "NAVEENMAROJU"
 password  = "1@Nottingham12345"
 role = "SYSADMIN"
 warehouse = "COMPUTE_WH"
