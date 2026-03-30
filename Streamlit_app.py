@@ -4,8 +4,9 @@ from snowflake.snowpark.session import Session
 from snowflake.snowpark.functions import col
 import toml
 import requests  
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
-st.text(smoothiefroot_response)
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response.text)
+
 
 # Load Snowflake config
 config = toml.load("config.toml")
