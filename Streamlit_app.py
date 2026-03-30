@@ -7,16 +7,11 @@ import requests
 
 url = "https://my.smoothiefroot.com/api/fruit/watermelon"
 
-smoothiefroot_response = requests.get(url)
+response = requests.get(url)
 
-# Show status code
-st.write("Status:", response.status_code)
+st.write("Status Code:", response.status_code)
+st.write("Response:", response.text)
 
-# Show JSON if the API returns JSON
-try:
-    st.json(response.json())
-except:
-    st.text(response.text)
 
 
 
