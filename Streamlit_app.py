@@ -4,8 +4,20 @@ from snowflake.snowpark.session import Session
 from snowflake.snowpark.functions import col
 import toml
 import requests  
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response.text)
+
+url = "https://my.smoothiefroot.com/api/fruit/watermelon"
+
+smoothiefroot_response = requests.get(url)
+
+# Show status code
+st.write("Status:", response.status_code)
+
+# Show JSON if the API returns JSON
+try:
+    st.json(response.json())
+except:
+    st.text(response.text)
+
 
 
 # Load Snowflake config
