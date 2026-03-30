@@ -7,7 +7,7 @@ import toml
 
 # Load Snowflake config
 config = toml.load("config.toml")
-connection_parameters = config["connections"]["snowflake"]
+connection_parameters = config["connections.snowflake"]["snowflake"]
 
 # Create Snowpark session
 session = Session.builder.configs(connection_parameters).create()
