@@ -2,6 +2,14 @@
 import streamlit as st
 from snowflake.snowpark.session import Session
 from snowflake.snowpark.functions import col
+import toml
+
+# Load Snowflake config
+config = toml.load("config.toml")
+connection_parameters = config["snowflake"]
+
+# Create Snowpark session
+session = Session.builder.configs(connection_parameters).create()
 
 # Write directly to the app.
 st.title(f":cup_with_straw: Customize Your Smoothie!:cup_with_straw: ")
